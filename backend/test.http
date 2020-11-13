@@ -1,0 +1,54 @@
+#### USADO PARA PRUEBAS CON CLIENTE REST DE VSCODE 
+
+### REGISTAR CLIENTE
+POST http://localhost:4000/api/cliente/
+Content-Type: application/json
+
+{
+    "documento": "543216789",
+    "nombres": "other user",
+    "mail": "other@other.com",
+    "celular": 123987539
+}
+
+### VER LISTA CLIENTES 
+GET http://localhost:4000/api/cliente/
+
+### CONSULTAR SALDO
+POST http://localhost:4000/api/billetera/
+Content-Type: application/json
+
+{
+    "documento": "16263015",
+    "celular": 168032845
+}
+
+### RECARGAR BILLETERA
+POST http://localhost:4000/api/billetera/recarga/
+Content-Type: application/json
+
+{
+    "recarga":  2200,
+    "documento": "16263015",
+    "celular": 168032845
+}
+
+### PAGAR
+POST http://localhost:4000/api/billetera/pagar/
+Content-Type: application/json
+
+{
+    "saldo": 2497,
+    "monto_pago": 1000,
+    "documento": "16263015",
+    "celular": 168032845,
+    "mail": "jandroenq@gmail.com"
+}
+### CONFIRMAR PAGO
+POST http://localhost:4000/api/billetera/confirmar/
+Content-Type: application/json
+
+{
+    "token": 508589
+}
+

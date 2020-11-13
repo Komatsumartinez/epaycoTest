@@ -1,0 +1,261 @@
+{
+	"info": {
+		"_postman_id": "81998c9d-87c5-48bf-b1a5-22e4f788141f",
+		"name": "test-epayco",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "REGISTRAR CLIENTE",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "documento",
+							"value": "76786786",
+							"type": "text"
+						},
+						{
+							"key": "nombres",
+							"value": "postman user",
+							"type": "text"
+						},
+						{
+							"key": "mail",
+							"value": "postman@postman.com",
+							"type": "text"
+						},
+						{
+							"key": "celular",
+							"value": "789123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/cliente/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"cliente",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "VER LISTA CLIENTES ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CONSULTAR SALDO",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "documento",
+							"value": "76786786",
+							"type": "text"
+						},
+						{
+							"key": "celular",
+							"value": "789123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/billetera/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"billetera",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RECARGA BILLETERA",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "recarga",
+							"value": "1500",
+							"type": "text"
+						},
+						{
+							"key": "documento",
+							"value": "76786786",
+							"type": "text"
+						},
+						{
+							"key": "celular",
+							"value": "789123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/billetera/recarga/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"billetera",
+						"recarga",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PAGAR",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "saldo",
+							"value": "1500",
+							"type": "text"
+						},
+						{
+							"key": "monto_pago",
+							"value": "800",
+							"type": "text"
+						},
+						{
+							"key": "documento",
+							"value": "76786786",
+							"type": "text"
+						},
+						{
+							"key": "celular",
+							"value": "789123456",
+							"type": "text"
+						},
+						{
+							"key": "mail",
+							"value": "postman@postman.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/billetera/pagar/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"billetera",
+						"pagar",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CONFIRMAR PAGO",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\": 361321\n}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/billetera/confirmar/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"billetera",
+						"confirmar",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
